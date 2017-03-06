@@ -1,5 +1,7 @@
-package biblio.dao;
+package biblioFR.dao;
 import java.util.GregorianCalendar;
+
+import biblioFR.metier.Adherent;
 import biblioFR.metier.Employe;
 
 import biblioFR.metier.EnumCategorieEmploye;
@@ -18,9 +20,13 @@ public class UtilisateursDao {
 
 
 				// Chaque utilisateur doit avoir les attributs = nom, Prenom, dateNaiss, sexe(string), Id(integer), pwd(sting), pseudo(string) 
-				new Utilisateur ("JACKSON", "Samuel", new GregorianCalendar (1960,0,20).getTime(), "H", 1, "azerty", "SJ"),
+				new Utilisateur ("JACKSON", "Samuel", new GregorianCalendar (1960,0,20).getTime(), "M", 1, "azerty", "SJ"),
 				// new Employe ("Samuel", "Azerty", "SamSam", EnumCategorieEmploye.BIBLIOTHECAIRE),
-				new Utilisateur ("DEFUNES", "Louis", new GregorianCalendar (1915,0,20).getTime(), "H", 2, "azerty", "LD"),
+				new Utilisateur ("DEFUNES", "Louis", new GregorianCalendar (1915,0,20).getTime(), "M", 2, "azerty", "LD"),
+				// Chaque utilisateur doit avoir les attributs = nom, Prenom, dateNaiss, sexe(string), Id(integer), pwd(sting), pseudo(string) 
+				new Employe ("WILLYS", "Bruce", new GregorianCalendar (1958,1,12).getTime(), "H", 3, "qwerty", "WB","codeMAt1" , EnumCategorieEmploye.BIBLIOTHECAIRE),
+				new Employe ("NORRIS", "Chuck", new GregorianCalendar (1950,2,10).getTime(), "H", 3, "qwerty", "LD","CodeMat2" , EnumCategorieEmploye.RESPONSABLE),
+				new Adherent ("JOLY", "Angelina", new GregorianCalendar (1970,3,10).getTime(), "F", 4, "qwerty", "AJ","0669696969")
 		};
 
 

@@ -1,4 +1,4 @@
-package biblio.exception;
+package biblioFR.exception;
 
 
 public class BiblioException extends Exception {
@@ -14,7 +14,7 @@ public class BiblioException extends Exception {
 
 	public BiblioException() 
 	   {
-	    super("Probl�me generique sur l'application bibliotheque");
+	    super("Problème générique sur l'application bibliothèque");
 	   }
 	
 	
@@ -23,15 +23,4 @@ public class BiblioException extends Exception {
    {
     super(message);
    }
-
-   public static void main (String [] args) { 
-	   
-	   System.out.println(new BiblioException ( "Erreur : carte bloquee"));
-	   System.out.println(new BiblioException ());
-	   System.out.println(new BiblioException ( "Nombre maximum d'emprunt atteints"));
-	   
-	   
-   }
-   
-
 }
