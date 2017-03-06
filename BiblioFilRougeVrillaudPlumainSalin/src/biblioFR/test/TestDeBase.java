@@ -1,7 +1,7 @@
 package biblioFR.test;
 
-import biblio.dao.ExemplairesDao;
-import biblio.dao.UtilisateursDao;
+import biblioFR.dao.ExemplairesDao;
+import biblioFR.dao.UtilisateursDao;
 
 public class TestDeBase {
 
@@ -10,6 +10,7 @@ public class TestDeBase {
 		System.out.println(ed1.findByKey(1));
 		System.out.println(ed1.findByKey(2));
 		UtilisateursDao ud1=new UtilisateursDao ();
-		System.out.println(ud1.findByKey(1));
+		System.out.println(ud1.findByKey(5));
+		System.out.println(ud1.findByKey(3));
 	}
 }
