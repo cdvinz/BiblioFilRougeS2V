@@ -2,6 +2,8 @@
 
 package biblioFR.metier;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 /**
@@ -53,15 +55,15 @@ private String pseudonyme;
 	 * @param pseudonyme: le pseudonyme à attribuer à l'utilisateur
 	 */
 	public void setPseudonyme(String pseudonyme) {this.pseudonyme = pseudonyme;}
-///**
-// * Attribut EmpruntEnCours: l'emprûnt (ou les emprûnts) en cours de l'utilisateur
-// */
-//private EmpruntEnCours empruntEnCours[];
-//	/**
-//	 * Mutateur setEmpruntEnCours: mutateur sur l'emprûnt (ou les emprûnts) en cours de l'utilisateur
-//	 * @param empruntEnCours: l'emprûnt (ou les emprûnts) en cours de l'utilisateur
-//	 */
-//	public void setEmpruntEnCours(EmpruntEnCours[] empruntEnCours) {this.empruntEnCours = empruntEnCours;}
+/**
+ * Collection EmpruntEnCours: l'emprûnt (ou les emprûnts) en cours de l'utilisateur
+ */
+private ArrayList<EmpruntEnCours> empruntEnCours=new ArrayList<EmpruntEnCours>();
+	/**
+	 * Mutateur setEmpruntEnCours: mutateur sur l'emprûnt (ou les emprûnts) en cours de l'utilisateur
+	 * @param empruntEnCours: l'emprûnt (ou les emprûnts) en cours de l'utilisateur
+	 */
+	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {this.empruntEnCours = empruntEnCours;}
    
 /**
  * Constructeur Utilisateur à 7 paramètres
@@ -141,30 +143,27 @@ public Utilisateur() {
 public String toString() {
 	return super.toString()+"\n\t - Utilisateur [idUt: "+this.getIdUtilisateur()+" | pwd: "+this.getPwd()+" | pseudo: "+this.getPseudonyme()+"]";
 }
-//	/**
-//    * @param ep
-//    * @author V.Vrillaud
-//    */
-//   public void addEmpruntEnCours(EmpruntEnCours ep) 
-//   {
-//    
-//   }
-//   
-//   /**
-//    * @return biblio.metier.EmpruntEnCours[ ]
-//    * @author V.Vrillaud
-//    */
-//  public EmpruntEnCours[ ] getEmpruntEnCours() 
-//   {
-//    return null;
-//   }
-//   
-//   /**
-//    * @return Integer
-//    * @author V.Vrillaud
-//    */
-//   public Integer getNbEmpruntsEnCours() 
-//   {
-//    return null;
-//   }
+
+/**
+ * Méthode addEmpruntEnCours: ajout d'un emprûnt en cours
+ * @param ep: l'emprûnt en cours
+ * @author V.Vrillaud
+ */
+public void addEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.add(empc);}
+
+public void removeEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.remove(empc);}
+   
+/**
+ * Méthode getEmpruntEnCours: le (ou les) emprûnt(s) en cours
+ * @return le (ou les) emprûnt(s) en cours
+ * @author V.Vrillaud
+ */
+public ArrayList<EmpruntEnCours> getEmpruntEnCours() {Collections.sort(empruntEnCours);return empruntEnCours;}
+   
+/**
+ * Méthode getNbEmpruntsEnCours: le nombre d'emprûnt(s) en cours
+ * @return le nombre d'emprûnt(s) en cours
+ * @author V.Vrillaud
+ */
+public Integer getNbEmpruntsEnCours() {return empruntEnCours.size();}
 }

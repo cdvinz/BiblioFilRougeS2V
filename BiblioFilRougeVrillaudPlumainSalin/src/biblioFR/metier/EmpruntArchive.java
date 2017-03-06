@@ -98,33 +98,25 @@ public class EmpruntArchive
 	/**
 	 * @return the emprunteur
 	 */
-	public Utilisateur getEmprunteur() {
-		return emprunteur;
-	}
+	public Utilisateur getEmprunteur() {return emprunteur;}
 
 
 	/**
 	 * @param emprunteur the emprunteur to set
 	 */
-	public void setEmprunteur(Utilisateur emprunteur) {
-		this.emprunteur = emprunteur;
-	}
+	public void setEmprunteur(Utilisateur emprunteur) {this.emprunteur = emprunteur;}
 
 
 	/**
 	 * @return the exemplaire
 	 */
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
+	public Exemplaire getExemplaire() {return exemplaire;}
 
 
 	/**
 	 * @param exemplaire the exemplaire to set
 	 */
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
-	}
+	public void setExemplaire(Exemplaire exemplaire) {this.exemplaire = exemplaire;}
 
 
 	/* (non-Javadoc)

@@ -96,8 +96,5 @@ public String toString() {
     * @return Integer
     * @roseuid 494239C5037A
     */
-   public Integer getNbRetards() 
-   {
-    return null;
-   }
+   public Integer getNbRetards() {return null;}
 }
