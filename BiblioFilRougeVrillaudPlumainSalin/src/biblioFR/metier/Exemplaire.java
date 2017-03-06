@@ -3,6 +3,7 @@
 package biblioFR.metier;
 
 import java.util.*;
+import static biblioFR.metier.Personne.sdf;
 
 public class Exemplaire 
 {
@@ -55,7 +56,7 @@ public class Exemplaire
 	 * @param dateAchat
 	 */
 	public Exemplaire(Integer idExemplaire, Date dateAchat) {
-		this(idExemplaire, dateAchat, EnumStatusExemplaire.disponible);
+		this(idExemplaire, dateAchat, EnumStatusExemplaire.DISPONIBLE);
 	}
 	
 	/**
@@ -148,7 +149,7 @@ public class Exemplaire
 	 */
 	@Override
 	public String toString() {
-		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + getDateAchat() + ", isbn=" + getIsbn() 
+		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + sdf.format(getDateAchat()) + ", isbn=" + getIsbn() 
 		+ ", theEmpruntEnCours=" + getTheEmpruntEnCours() + "]";
 	}
 
