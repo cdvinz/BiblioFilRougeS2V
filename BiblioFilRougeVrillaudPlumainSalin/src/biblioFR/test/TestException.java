@@ -1,6 +1,6 @@
 package biblioFR.test;
 
-import biblio.exception.BiblioException;
+import biblioFR.exception.BiblioException;
 
 public class TestException {
 	   public static void main (String [] args) { 

@@ -1,4 +1,4 @@
-package biblio.dao;
+package biblioFR.dao;
 
 import java.util.GregorianCalendar;
 import biblioFR.metier.EnumStatusExemplaire;

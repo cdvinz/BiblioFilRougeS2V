@@ -24,9 +24,9 @@ public class UtilisateursDao {
 				// new Employe ("Samuel", "Azerty", "SamSam", EnumCategorieEmploye.BIBLIOTHECAIRE),
 				new Utilisateur ("DEFUNES", "Louis", new GregorianCalendar (1915,0,20).getTime(), "M", 2, "azerty", "LD"),
 				// Chaque utilisateur doit avoir les attributs = nom, Prenom, dateNaiss, sexe(string), Id(integer), pwd(sting), pseudo(string) 
-				new Employe ("WILLYS", "Bruce", new GregorianCalendar (1958,1,12).getTime(), "H", 3, "qwerty", "WB","codeMAt1" , EnumCategorieEmploye.BIBLIOTHECAIRE),
-				new Employe ("NORRIS", "Chuck", new GregorianCalendar (1950,2,10).getTime(), "H", 3, "qwerty", "LD","CodeMat2" , EnumCategorieEmploye.RESPONSABLE),
-				new Adherent ("JOLY", "Angelina", new GregorianCalendar (1970,3,10).getTime(), "F", 4, "qwerty", "AJ","0669696969")
+				new Employe ("WILLYS", "Bruce", new GregorianCalendar (1958,1,12).getTime(), "M", 3, "qwerty", "WB","codeMat1" , EnumCategorieEmploye.BIBLIOTHECAIRE),
+				new Employe ("NORRIS", "Chuck", new GregorianCalendar (1950,2,10).getTime(), "M", 4, "qwerty", "LD","CodeMat2" , EnumCategorieEmploye.RESPONSABLE),
+				new Adherent ("JOLY", "Angelina", new GregorianCalendar (1970,3,10).getTime(), "F", 5, "qwerty", "AJ","0669696969")
 		};
 
 
