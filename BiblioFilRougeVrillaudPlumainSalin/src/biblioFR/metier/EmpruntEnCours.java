@@ -2,103 +2,110 @@
 
 package biblioFR.metier;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import static biblioFR.metier.Personne.sdf;
 
+/**
+ * Concept de l'Emprûnt en cours
+ * @author V.Plumain
+ *
+ */
 public class EmpruntEnCours 
 {
+	/**
+	 * Attribut dateEmprunt: la date d'emprûnt
+	 */
 	private Date dateEmprunt;
+	/**
+	 * Attribut exemplaire: l'exemplaire
+	 */
 	private Exemplaire exemplaire;
+	/**
+	 * Attribut emprunteur: l'emprûnteur
+	 */
 	private Utilisateur emprunteur;
-	//SimpleDateFormat sdf = new SimpleDateFormat("DD");
 
 
 	/**
-	 * @param dateEmprunt
-	 * @param exemplaire
-	 * @param emprunteur
+	 * Constructeur EmpruntEnCours à 3 paramètres
+	 * @param dateEmprunt: la date d'emprûnt
+	 * @param exemplaire: l'exemplaire
+	 * @param emprunteur: l'emprûnteur
 	 */
-	public EmpruntEnCours(Date dateEmprunt, Exemplaire exemplaire, Utilisateur emprunteur) {
-		setDateEmprunt(dateEmprunt);
-		setExemplaire(exemplaire);
+	public EmpruntEnCours(Utilisateur emprunteur, Exemplaire exemplaire, Date dateEmprunt) {
 		setEmprunteur(emprunteur);
+		setExemplaire(exemplaire);
+		setDateEmprunt(dateEmprunt);
 	}
 
 	/**
-	 * @param dateEmprunt
-	 * @param exemplaire
+	 * Constructeur EmpruntEnCours à 2 paramètres
+	 * @param dateEmprunt: la date d'emprûnt
+	 * @param exemplaire: l'exemplaire
 	 */
-	public EmpruntEnCours(Date dateEmprunt, Exemplaire exemplaire) {
-		this(dateEmprunt, exemplaire, null);
+	public EmpruntEnCours(Exemplaire exemplaire, Date dateEmprunt) {
+		setEmprunteur(emprunteur);
+		setExemplaire(exemplaire);
+		setDateEmprunt(dateEmprunt);
 	}
-
+	
 	/**
-	 * @param dateEmprunt
+	 * Constructeur EmpruntEnCours à 1 paramètre
+	 * @param dateEmprunt: la date d'emprûnt
 	 */
 	public EmpruntEnCours(Date dateEmprunt) {
-		this(dateEmprunt, null);
+		this(dateEmprunt);
 	}
+	
+	/**
+	 * Constructeur EmpruntEnCours sans paramètres
+	 */
+	public EmpruntEnCours() {this(null,null,null);}
 
 	/**
-	 * @roseuid 5241490A01C5
+	 * Accesseur getDateEmprunt: accesseur sur la date d'emprûnt
+	 * @return dateEmprunt: la date d'emprûnt
 	 */
-	public EmpruntEnCours() {
-		this(null);
-	}
+	public Date getDateEmprunt() {return dateEmprunt;}
 
 	/**
-	 * @return the dateEmprunt
+	 * Mutateur setDateEmprunt: mutateur sur la date d'emprûnt
+	 * @param dateEmprunt: la date d'emprûnt
 	 */
-	public Date getDateEmprunt() {
-		return dateEmprunt;
-	}
+	public void setDateEmprunt(Date dateEmprunt) {this.dateEmprunt=dateEmprunt;}
 
 	/**
-	 * @param d
-	 * @roseuid 4CA4A51A038A
+	 * Accesseur getExemplaire: accesseur sur l'exemplaire
+	 * @return exemplaire: l'exemplaire
 	 */
-	public void setDateEmprunt(Date d) {
-
-	}
+	public Exemplaire getExemplaire() {return exemplaire;}
 
 	/**
-	 * @return the exemplaire
+	 * Mutateur setExemplaire: mutateur sur l'exemplaire
+	 * @param exemplaire: l'exemplaire à attribuer
 	 */
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
+	public void setExemplaire(Exemplaire exemplaire) {this.exemplaire = exemplaire;}
 
 	/**
-	 * @param exemplaire the exemplaire to set
+	 * Accesseur getEmprunteur: accesseur sur l'emprûnteur
+	 * @return emprunteur: l'emprûnteur
 	 */
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
-	}
+	public Utilisateur getEmprunteur() {return emprunteur;}
 
 	/**
-	 * @return the emprunteur
+	 * Mutateur setEmprunteur: mutateur sur l'emprûnteur
+	 * @param emprunteur: l'emprûnteur à attribuer
 	 */
-	public Utilisateur getEmprunteur() {
-		return emprunteur;
-	}
+	public void setEmprunteur(Utilisateur emprunteur) {this.emprunteur = emprunteur;}
 
-	/**
-	 * @param emprunteur the emprunteur to set
-	 */
-	public void setEmprunteur(Utilisateur emprunteur) {
-		this.emprunteur = emprunteur;
-	}
-
-	/* (non-Javadoc)
+	/** 
+	 * toString redéfinie
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "EmpruntEnCours [dateEmprunt=" + getDateEmprunt() + ", exemplaire=" + getExemplaire()
+		return "EmpruntEnCours [dateEmprunt=" + sdf.format(getDateEmprunt()) + ", exemplaire=" + getExemplaire()
 				+ ", emprunteur=" + getEmprunteur() + "]";
 	}
-	public static void main(String args[]){
-
-	}
-
 }
