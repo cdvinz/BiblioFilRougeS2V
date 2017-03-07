@@ -79,7 +79,9 @@ public class EmpruntEnCours {
 	 * Accesseur getExemplaire: accesseur sur l'exemplaire
 	 * @return exemplaire: l'exemplaire
 	 */
-	public Exemplaire getExemplaire() {return exemplaire;}
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
 
 	/**
 	 * Mutateur setExemplaire: mutateur sur l'exemplaire
@@ -89,7 +91,7 @@ public class EmpruntEnCours {
 		if(getExemplaire()==null & exemplaire.getStatus()== EnumStatusExemplaire.DISPONIBLE){
 			this.exemplaire = exemplaire;
 			this.getExemplaire().setStatus(EnumStatusExemplaire.PRETE);
-			//this.getExemplaire().setTheEmpruntEnCours(this);
+			this.getExemplaire().setTheEmpruntEnCours(this);
 		}
 	}
 
@@ -122,7 +124,7 @@ public class EmpruntEnCours {
 	 */
 	@Override
 	public String toString() {
-		return "EmpruntEnCours [dateEmprunt=" + sdf.format(getDateEmprunt()) + ", exemplaire=" + getExemplaire()
-				+ ", emprunteur=" + getEmprunteur() + "]";
+		return "EmpruntEnCours [dateEmprunt=" + sdf.format(getDateEmprunt()) /**/+ ", exemplaire= [ idExemplaire=" + getExemplaire().getIdExemplaire()	+ ", dateAchat=" + sdf.format(getExemplaire().getDateAchat()) + ", statut=" + getExemplaire().getStatus() + ", isbn=" + getExemplaire().getIsbn() 
+		+ "]"/**/+ ", emprunteur=" + getEmprunteur() + "]";
 	}
 }
