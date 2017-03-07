@@ -43,24 +43,24 @@ public class EmpruntEnCours
 	 * @param dateEmprunt: la date d'emprûnt
 	 * @param exemplaire: l'exemplaire
 	 */
-	public EmpruntEnCours(Exemplaire exemplaire, Date dateEmprunt) {
-		setEmprunteur(emprunteur);
-		setExemplaire(exemplaire);
-		setDateEmprunt(dateEmprunt);
+	public EmpruntEnCours(Utilisateur emprunteur, Exemplaire exemplaire) {
+		this(emprunteur, exemplaire, new Date());
 	}
 	
 	/**
 	 * Constructeur EmpruntEnCours à 1 paramètre
 	 * @param dateEmprunt: la date d'emprûnt
 	 */
-	public EmpruntEnCours(Date dateEmprunt) {
-		this(dateEmprunt);
+	public EmpruntEnCours(Utilisateur emprunteur) {
+		this(emprunteur, null);
 	}
 	
 	/**
 	 * Constructeur EmpruntEnCours sans paramètres
 	 */
-	public EmpruntEnCours() {this(null,null,null);}
+	public EmpruntEnCours() {
+		this(null);
+		}
 
 	/**
 	 * Accesseur getDateEmprunt: accesseur sur la date d'emprûnt
