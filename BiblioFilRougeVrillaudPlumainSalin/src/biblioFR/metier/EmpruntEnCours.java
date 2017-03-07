@@ -72,7 +72,9 @@ public class EmpruntEnCours
 	 * Mutateur setDateEmprunt: mutateur sur la date d'emprûnt
 	 * @param dateEmprunt: la date d'emprûnt
 	 */
-	public void setDateEmprunt(Date dateEmprunt) {this.dateEmprunt=dateEmprunt;}
+	public void setDateEmprunt(Date dateEmprunt) {
+		this.dateEmprunt=dateEmprunt;
+		}
 
 	/**
 	 * Accesseur getExemplaire: accesseur sur l'exemplaire
@@ -96,7 +98,17 @@ public class EmpruntEnCours
 	 * Mutateur setEmprunteur: mutateur sur l'emprûnteur
 	 * @param emprunteur: l'emprûnteur à attribuer
 	 */
-	public void setEmprunteur(Utilisateur emprunteur) {this.emprunteur = emprunteur;}
+	public void setEmprunteur(Utilisateur emprunteur) {
+		if(this.getEmprunteur()==null){
+			this.emprunteur = emprunteur;
+			this.getEmprunteur().addEmpruntEnCours(this);
+		}
+		else{
+			System.out.println("dans LE BABA Ali");
+		}
+
+		
+	}
 
 	/** 
 	 * toString redéfinie

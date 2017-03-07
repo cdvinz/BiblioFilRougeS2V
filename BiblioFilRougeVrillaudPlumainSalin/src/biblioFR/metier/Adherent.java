@@ -97,4 +97,15 @@ public String toString() {
     * @roseuid 494239C5037A
     */
    public Integer getNbRetards() {return null;}
+/* (non-Javadoc)
+ * @see biblioFR.metier.Utilisateur#addEmpruntEnCours(biblioFR.metier.EmpruntEnCours)
+ */
+@Override
+public void addEmpruntEnCours(EmpruntEnCours empc) {
+	if((!this.getEmpruntEnCours().contains(empc)) && this.getNbEmpruntsEnCours()<nbMaxPrets && this.getNbRetards()==0){
+		getEmpruntEnCours().add(empc);
+	}
+
+}
+   
 }

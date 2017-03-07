@@ -62,7 +62,9 @@ private ArrayList<EmpruntEnCours> empruntEnCours=new ArrayList<EmpruntEnCours>()
 	 * Mutateur setEmpruntEnCours: mutateur sur l'emprûnt (ou les emprûnts) en cours de l'utilisateur
 	 * @param empruntEnCours: l'emprûnt (ou les emprûnts) en cours de l'utilisateur
 	 */
-	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {this.empruntEnCours = empruntEnCours;}
+	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours){
+		this.empruntEnCours = empruntEnCours;
+		}
    
 /**
  * Constructeur Utilisateur à 7 paramètres
@@ -137,7 +139,15 @@ public String toString() {
  * @param ep: l'emprûnt en cours
  * @author V.Vrillaud
  */
-public void addEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.add(empc);}
+public void addEmpruntEnCours(EmpruntEnCours empc) {
+	if(!this.getEmpruntEnCours().contains(empc)){
+		empruntEnCours.add(empc);
+	}
+	else{
+		System.out.println("dans LE *** LULU");
+	}
+	
+}
 
 public void removeEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.remove(empc);}
    
