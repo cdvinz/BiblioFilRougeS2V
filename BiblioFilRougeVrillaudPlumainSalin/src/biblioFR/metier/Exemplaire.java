@@ -12,7 +12,7 @@ public class Exemplaire
 	private static Integer idExemplaire = 1;
 	 */
 	private Date dateAchat;
-	private EnumStatusExemplaire status;
+	private EnumStatusExemplaire status=EnumStatusExemplaire.DISPONIBLE;
 	private String isbn;
 	//private Livre livre;
 	public EmpruntEnCours theEmpruntEnCours;
@@ -143,7 +143,8 @@ public class Exemplaire
 	public void setTheEmpruntEnCours(EmpruntEnCours theEmpruntEnCours) {
 		if(this.getTheEmpruntEnCours()==null){
 			this.theEmpruntEnCours = theEmpruntEnCours;
-			this.setStatus(EnumStatusExemplaire.PRETE);
+			//this.setStatus(EnumStatusExemplaire.PRETE);
+			//this.theEmpruntEnCours = this.getTheEmpruntEnCours();
 		}
 	}
 	
@@ -152,7 +153,7 @@ public class Exemplaire
 	 */
 	@Override
 	public String toString() {
-		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + sdf.format(getDateAchat()) + ", isbn=" + getIsbn() 
+		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + sdf.format(getDateAchat()) + ", statut=" + getStatus() + ", isbn=" + getIsbn() 
 		+ ", theEmpruntEnCours=" + getTheEmpruntEnCours() + "]";
 	}
 

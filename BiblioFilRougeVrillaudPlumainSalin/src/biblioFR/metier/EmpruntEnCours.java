@@ -86,9 +86,10 @@ public class EmpruntEnCours {
 	 * @param exemplaire: l'exemplaire à attribuer
 	 */
 	public void setExemplaire(Exemplaire exemplaire) {
-		if(/*getExemplaire()==null &&*/ exemplaire.getStatus()== EnumStatusExemplaire.DISPONIBLE){
+		if(getExemplaire()==null & exemplaire.getStatus()== EnumStatusExemplaire.DISPONIBLE){
 			this.exemplaire = exemplaire;
-			this.getExemplaire().setTheEmpruntEnCours(this);
+			this.getExemplaire().setStatus(EnumStatusExemplaire.PRETE);
+			//this.getExemplaire().setTheEmpruntEnCours(this);
 		}
 	}
 
