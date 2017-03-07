@@ -11,8 +11,7 @@ import java.util.Date;
  * @author V.Vrillaud
  *
  */
-public class Utilisateur extends Personne 
-{
+public class Utilisateur extends Personne implements Comparable{
 /**
  * Attribut idUtilisateur: l'identifiant de l'utilisateur
  */
@@ -91,10 +90,7 @@ public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe,int i
  * @param pwd: le mot de passe de l'utilisateur
  */
 public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe,int idUtilisateur,String pwd) {
-	super(nom,prenom,dateNaissance,sexe);
-	this.setIdUtilisateur(idUtilisateur);
-	this.setPwd(pwd);
-	this.setPseudonyme("inconnu");
+	this(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,"inconnu");
 }
 /**
  * Constructeur Utilisateur à 5 paramètres
@@ -105,10 +101,7 @@ public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe,int i
  * @param idUtilisateur: l'identifiant de l'utilisateur
  */
 public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe,int idUtilisateur) {
-	super(nom,prenom,dateNaissance,sexe);
-	this.setIdUtilisateur(idUtilisateur);
-	this.setPwd("inconnu");
-	this.setPseudonyme("inconnu");
+	this(nom,prenom,dateNaissance,sexe,idUtilisateur,"inconnu");
 }
 /**
  * Constructeur Utilisateur à 4 paramètres
@@ -118,19 +111,14 @@ public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe,int i
  * @param sexe: le sexe à attribuer à la personne
  */
 public Utilisateur(String nom,String prenom,Date dateNaissance,String sexe) {
-	super(nom,prenom,dateNaissance,sexe);
-	this.setIdUtilisateur(0);
-	this.setPwd("inconnu");
-	this.setPseudonyme("inconnu");
+	this(nom,prenom,dateNaissance,sexe,0);
 }
 /**
  * Constructeur Utilisateur sans paramètre
  */
 public Utilisateur() {
-	super();
-	this.setIdUtilisateur(0);
-	this.setPwd("inconnu");
-	this.setPseudonyme("inconnu");
+	this("inconnu","inconnu",new Date(),"inconnu");
+
 }
 
 
@@ -158,7 +146,10 @@ public void removeEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.remove(emp
  * @return le (ou les) emprûnt(s) en cours
  * @author V.Vrillaud
  */
-public ArrayList<EmpruntEnCours> getEmpruntEnCours() {Collections.sort(empruntEnCours);return empruntEnCours;}
+public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
+	empruntEnCours.sort(null);;
+	return empruntEnCours;
+}
    
 /**
  * Méthode getNbEmpruntsEnCours: le nombre d'emprûnt(s) en cours
