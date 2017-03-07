@@ -141,7 +141,10 @@ public class Exemplaire
 	 * @param theEmpruntEnCours the theEmpruntEnCours to set
 	 */
 	public void setTheEmpruntEnCours(EmpruntEnCours theEmpruntEnCours) {
-		this.theEmpruntEnCours = theEmpruntEnCours;
+		if(this.getTheEmpruntEnCours()==null){
+			this.theEmpruntEnCours = theEmpruntEnCours;
+			this.setStatus(EnumStatusExemplaire.PRETE);
+		}
 	}
 	
 	/* (non-Javadoc)

@@ -10,8 +10,7 @@ import static biblioFR.metier.Personne.sdf;
  * @author V.Plumain
  *
  */
-public class EmpruntEnCours 
-{
+public class EmpruntEnCours {
 	/**
 	 * Attribut dateEmprunt: la date d'emprûnt
 	 */
@@ -19,7 +18,7 @@ public class EmpruntEnCours
 	/**
 	 * Attribut exemplaire: l'exemplaire
 	 */
-	private Exemplaire exemplaire;
+	private Exemplaire exemplaire = null;
 	/**
 	 * Attribut emprunteur: l'emprûnteur
 	 */
@@ -86,7 +85,12 @@ public class EmpruntEnCours
 	 * Mutateur setExemplaire: mutateur sur l'exemplaire
 	 * @param exemplaire: l'exemplaire à attribuer
 	 */
-	public void setExemplaire(Exemplaire exemplaire) {this.exemplaire = exemplaire;}
+	public void setExemplaire(Exemplaire exemplaire) {
+		if(/*getExemplaire()==null &&*/ exemplaire.getStatus()== EnumStatusExemplaire.DISPONIBLE){
+			this.exemplaire = exemplaire;
+			this.getExemplaire().setTheEmpruntEnCours(this);
+		}
+	}
 
 	/**
 	 * Accesseur getEmprunteur: accesseur sur l'emprûnteur

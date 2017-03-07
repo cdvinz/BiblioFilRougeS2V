@@ -96,7 +96,9 @@ public String toString() {
     * @return Integer
     * @roseuid 494239C5037A
     */
-   public Integer getNbRetards() {return null;}
+   public Integer getNbRetards() {
+	   return 0;
+	 }
 /* (non-Javadoc)
  * @see biblioFR.metier.Utilisateur#addEmpruntEnCours(biblioFR.metier.EmpruntEnCours)
  */

@@ -22,5 +22,6 @@ public class TestDeBase {
 		ud1.findByKey(5).addEmpruntEnCours(empc1);
 		//System.out.println(empc1.getEmprunteur().getEmpruntEnCours()+"\n");
 		empc1.setEmprunteur(ud1.findByKey(3));
+		System.out.println(empc1.getExemplaire()+"\n");
 	}
 }
