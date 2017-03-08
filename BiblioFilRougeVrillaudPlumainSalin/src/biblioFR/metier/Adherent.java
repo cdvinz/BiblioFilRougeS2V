@@ -117,9 +117,14 @@ public class Adherent extends Utilisateur
 			return true ;
 		}
 		else{
+			try {
+				throw new BiblioException("condition non remplie");
+			} catch (BiblioException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return false;	
 		}
-
 	}
 
 	/* (non-Javadoc)
@@ -130,6 +135,6 @@ public class Adherent extends Utilisateur
 		if(isConditionsPretAcceptees()){
 			getEmpruntEnCours().add(empc);
 		}
-
-	}
+		
+}
 }

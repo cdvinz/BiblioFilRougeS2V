@@ -15,8 +15,9 @@ public class ExemplairesDao{
 	private static Exemplaire [] exemplairesDB = {  
 
 			new Exemplaire (1, new GregorianCalendar (2017,0,25).getTime(),EnumStatusExemplaire.DISPONIBLE, "1111111"),
-			new Exemplaire (2, new GregorianCalendar (2017,1,10).getTime(),EnumStatusExemplaire.PRETE, "0022222"),
-			new Exemplaire (3, new GregorianCalendar (2017,2,13).getTime(),EnumStatusExemplaire.SUPPRIME, "0033333")};
+			new Exemplaire (4, new GregorianCalendar (2017,12,25).getTime(),EnumStatusExemplaire.DISPONIBLE, "1111111"),
+			new Exemplaire (2, new GregorianCalendar (2017,1,10).getTime(),EnumStatusExemplaire.DISPONIBLE, "0022222"),
+			new Exemplaire (3, new GregorianCalendar (2017,2,13).getTime(),EnumStatusExemplaire.DISPONIBLE, "0033333")};
 
 
 	/**
