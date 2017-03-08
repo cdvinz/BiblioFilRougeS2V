@@ -157,7 +157,7 @@ public void removeEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.remove(emp
  * @author V.Vrillaud
  */
 public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
-	empruntEnCours.sort(null);;
+	//empruntEnCours.sort(null);;
 	return empruntEnCours;
 }
    
