@@ -2,7 +2,9 @@
 
 package biblioFR.metier;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Classe Adherent: le concept de l'Adhérent
@@ -33,7 +35,16 @@ private static Integer nbMaxPrets = 3;
  * Attribut statique dureeMaxPrets: la durée maximale d'un prêt autorisée (en jours)
  */
 private static Integer dureeMaxPrets = 15;
-   
+/**
+ * Attribut nbRetards: le nombre de retards de l'adhérent
+ */
+private int nbRetards=0;
+	/**
+	 * Accesseur getNbRetard: accesseur sur le nombre de retard de l'adhérent
+	 * @return nbRetards: le nombre de retards de l'adhérent
+	 */
+	public Integer getNbRetards() {return this.nbRetards;}
+
 /**
  * Constructeur Adherent à 8 paramètres
  * @param nom: le nom à attribuer à la personne
@@ -71,7 +82,6 @@ public Adherent(){
 	this.setTelephone("inconnu");
 }
 
-
 /**
  * toString redéfinie
  * (non-Javadoc)
@@ -82,23 +92,36 @@ public String toString() {
 	return super.toString()+"\n\t - Adhérent [téléphone: "+this.getTelephone()+" . nbMaxPrêts: "+nbMaxPrets+" . duréeMaxPrêt: "+dureeMaxPrets+" jours]";
 }
 
+/**
+ * Méthode isConditionsPretAcceptees: vérification des conditions de prêt
+ * @return boolean: si les conditions de prêt sont acceptées ou non
+ */
+public boolean isConditionsPretAcceptees() 
+{
+if (this.getNbRetards()!=0 && this.getNbEmpruntsEnCours()<3) return true ;
+return false;
+}
 
 /**
-    * @return Boolean
-    * @author V.Vrillaud
-    */
-   public Boolean isConditionsPretAcceptees() 
-   {
-    return null;
-   }
+ * Méthode isPretEnRetard: vérification du retard au niveau de la date du prêt
+ * @return si le prêt est en retard
+ */
+public int getIsPretEnRetard()
+{
+	GregorianCalendar gc=new GregorianCalendar();								
+	gc.add (Calendar.DAY_OF_YEAR,-dureeMaxPrets);								
+	Date dateMinSansRetard=gc.getTime();
+for (EmpruntEnCours empc:this.getEmpruntEnCours())
+	{									
+	boolean test=(dateMinSansRetard.after(empc.getDateEmprunt()));
+	System.out.println(empc.getDateEmprunt());
+	System.out.println(test);
+	if (test) nbRetards++;
+	}
+	return nbRetards;
+}
 
-/**
-    * @return Integer
-    * @roseuid 494239C5037A
-    */
-   public Integer getNbRetards() {
-	   return 0;
-	 }
+
 /* (non-Javadoc)
  * @see biblioFR.metier.Utilisateur#addEmpruntEnCours(biblioFR.metier.EmpruntEnCours)
  */
@@ -107,7 +130,5 @@ public void addEmpruntEnCours(EmpruntEnCours empc) {
 	if((!this.getEmpruntEnCours().contains(empc)) && this.getNbEmpruntsEnCours()<nbMaxPrets && this.getNbRetards()==0){
 		getEmpruntEnCours().add(empc);
 	}
-
 }
-   
 }
