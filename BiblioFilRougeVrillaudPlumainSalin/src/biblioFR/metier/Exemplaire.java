@@ -114,6 +114,10 @@ public class Exemplaire
 	 */
 	public void setStatus(EnumStatusExemplaire status) {
 		this.status = status;
+		
+		/*if(getStatus() == EnumStatusExemplaire.PRETE && getTheEmpruntEnCours()== null){
+			setTheEmpruntEnCours(new EmpruntEnCours());
+		}*/
 	}
 
 	/**
@@ -153,17 +157,10 @@ public class Exemplaire
 	 */
 	@Override
 	public String toString() {
-		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + sdf.format(getDateAchat()) + ", isbn=" + getIsbn() + ", statut=" + getStatus() + ((getStatus()==EnumStatusExemplaire.PRETE)?", date d'emprunt="+sdf.format(getTheEmpruntEnCours().getDateEmprunt())+", nom emprunteur="+getTheEmpruntEnCours().getEmprunteur().getNom()+", prénom emprunteur="+getTheEmpruntEnCours().getEmprunteur().getPrenom()+"]":"]");
-// ", isbn=" + getIsbn() + ", theEmpruntEnCours=" + getTheEmpruntEnCours() + "]";
+		return "Exemplaire [idExemplaire=" + idExemplaire + ", dateAchat=" + dateAchat + ", status=" + status
+				+ ", isbn=" + isbn + "]";
 	}
-	
-/*	@Override
-	public String toString() {
-		return "Exemplaire [ idExemplaire=" + getIdExemplaire()	+ ", dateAchat=" + sdf.format(getDateAchat()) + ", statut=" + getStatus() + ", isbn=" + getIsbn() 
-		+ ", theEmpruntEnCours=" + getTheEmpruntEnCours() + "]";
-	}
-	(getStatus==EnumStatusExemplaire.PRETE)?"date d'emprunt="+sdf.format(getEmpruntEnCours().getDateEmprunt())+", emprunteur="+getEmpruntEnCours().getEmprunteur():"";
-*/
+
 	public static void main(String args[]){
 
 	}

@@ -90,7 +90,7 @@ public class EmpruntEnCours {
 	public void setExemplaire(Exemplaire exemplaire) {
 		if(getExemplaire()==null & exemplaire.getStatus()== EnumStatusExemplaire.DISPONIBLE){
 			this.exemplaire = exemplaire;
-			this.getExemplaire().setStatus(EnumStatusExemplaire.PRETE);
+			//this.getExemplaire().setStatus(EnumStatusExemplaire.PRETE);
 			this.getExemplaire().setTheEmpruntEnCours(this);
 		}
 	}
@@ -117,14 +117,24 @@ public class EmpruntEnCours {
 		
 	}
 
-	/** 
-	 * toString redéfinie
-	 * (non-Javadoc)
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "EmpruntEnCours [dateEmprunt=" + sdf.format(getDateEmprunt()) /**/+ ", exemplaire= [ idExemplaire=" + getExemplaire().getIdExemplaire()	+ ", dateAchat=" + sdf.format(getExemplaire().getDateAchat()) + ", statut=" + getExemplaire().getStatus() + ", isbn=" + getExemplaire().getIsbn() 
-		+ "]"/**/+ ", emprunteur=" + getEmprunteur() + "]";
+		return "EmpruntEnCours [dateEmprunt=" + dateEmprunt + ", exemplaire=" + exemplaire + ", emprunteur="
+				+ emprunteur + "]";
 	}
-}
+	
+/*
+	*//** 
+	 * toString redéfinie
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 *//*
+	@Override
+	public String toString() {
+		return "EmpruntEnCours [dateEmprunt=" + sdf.format(getDateEmprunt()) + ", exemplaire= [ idExemplaire=" + getExemplaire().getIdExemplaire()	+ ", dateAchat=" + sdf.format(getExemplaire().getDateAchat()) + ", statut=" + getExemplaire().getStatus() + ", isbn=" + getExemplaire().getIsbn() 
+		+ "]"+ ", emprunteur=" + getEmprunteur() + "]";
+	}
+*/}

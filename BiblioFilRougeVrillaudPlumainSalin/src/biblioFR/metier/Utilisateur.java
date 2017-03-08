@@ -11,7 +11,7 @@ import java.util.Date;
  * @author V.Vrillaud
  *
  */
-public class Utilisateur extends Personne implements Comparable{
+public class Utilisateur extends Personne {
 /**
  * Attribut idUtilisateur: l'identifiant de l'utilisateur
  */
