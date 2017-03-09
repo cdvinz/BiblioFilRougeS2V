@@ -111,8 +111,9 @@ public class Adherent extends Utilisateur
 	/**
 	 * Méthode isConditionsPretAcceptees: vérification des conditions de prêt
 	 * @return boolean: si les conditions de prêt sont acceptées ou non
+	 * @throws BiblioException 
 	 */
-	public boolean isConditionsPretAcceptees() {
+	public boolean isConditionsPretAcceptees(){
 		if (this.getNbRetards()==0 && this.getNbEmpruntsEnCours()<3){
 			return true ;
 		}
@@ -120,10 +121,10 @@ public class Adherent extends Utilisateur
 			try {
 				throw new BiblioException("condition non remplie");
 			} catch (BiblioException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				//System.exit(0);
 			}
-			return false;	
+		return false;
 		}
 	}
 
@@ -135,6 +136,5 @@ public class Adherent extends Utilisateur
 		if(isConditionsPretAcceptees()){
 			getEmpruntEnCours().add(empc);
 		}
-		
 }
 }

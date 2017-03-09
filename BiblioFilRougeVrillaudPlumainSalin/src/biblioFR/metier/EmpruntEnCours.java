@@ -113,8 +113,6 @@ public class EmpruntEnCours {
 		else{
 			System.out.println("dans LE BABA Ali");
 		}
-
-		
 	}
 
 	/* (non-Javadoc)
@@ -123,7 +121,7 @@ public class EmpruntEnCours {
 	@Override
 	public String toString() {
 		return "EmpruntEnCours [dateEmprunt=" + dateEmprunt + ", exemplaire=" + exemplaire + ", emprunteur="
-				+ emprunteur + "]";
+				+ emprunteur + "]\n";
 	}
 	
 /*

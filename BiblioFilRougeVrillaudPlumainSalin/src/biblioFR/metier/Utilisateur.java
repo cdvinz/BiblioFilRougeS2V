@@ -146,10 +146,15 @@ public void addEmpruntEnCours(EmpruntEnCours empc) {
 	else{
 		System.out.println("dans LE *** LULU");
 	}
-	
 }
 
-public void removeEmpruntEnCours(EmpruntEnCours empc) {empruntEnCours.remove(empc);}
+/* Il est mieux de mettre cette méthode dans la classe Exemplaire
+//public void removeEmpruntEnCours(EmpruntEnCours empc) {
+//	empc.getExemplaire().setStatus(EnumStatusExemplaire.DISPONIBLE);
+//	empruntEnCours.remove(empc);
+//	new EmpruntArchive (new Date(),empc.getDateEmprunt(),empc.getEmprunteur(),empc.getExemplaire());
+//	empc = null;
+//	}
    
 /**
  * Méthode getEmpruntEnCours: le (ou les) emprûnt(s) en cours

@@ -14,6 +14,5 @@ public class TestEmpruntEnCours {
 		EmpruntEnCours empc1=new EmpruntEnCours(u6,ex1,new GregorianCalendar (2017,0,25).getTime());
 		System.out.println(empc1+"\n");
 		System.out.println(empc1.getExemplaire()+"\n");
-		
 	}
 }

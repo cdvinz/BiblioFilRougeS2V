@@ -11,7 +11,7 @@ public class TestEmployeEnRetard {
 	public static void main(String[] args) {
 		ExemplairesDao ed2=new ExemplairesDao ();
 		Employe ad5=new Employe ("JOLY", "Angelina", new GregorianCalendar (1970,3,10).getTime(), "F", 5, "qwerty", "AJ","0669696969");
-		System.out.println(ad5+"_______");
+		System.out.println(ad5+"\n");
 		EmpruntEnCours empc2=new EmpruntEnCours(ad5,ed2.findByKey(2),new GregorianCalendar (2017,0,25).getTime());
 		System.out.println("Emprunt en retard :\n"+empc2+"\n");
 		EmpruntEnCours empc3=new EmpruntEnCours(ad5,ed2.findByKey(1),new GregorianCalendar (2017,2,15).getTime());

@@ -152,6 +152,15 @@ public class Exemplaire
 //		}
 	}
 	
+	public void removeEmpruntEnCours(EmpruntEnCours empc) {
+		empc.getExemplaire().setStatus(EnumStatusExemplaire.DISPONIBLE);
+		empc.getEmprunteur().getEmpruntEnCours().remove(empc);
+		new EmpruntArchive (new Date(),empc.getDateEmprunt(),empc.getEmprunteur(),empc.getExemplaire());
+		//empc.setExemplaire(null);
+		//empc.setEmprunteur(null);
+		empc = null;
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
